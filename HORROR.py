@@ -1,0 +1,28 @@
+import pyttsx3 
+friend = pyttsx3.init()
+engine = pyttsx3.init()
+rate = friend.getProperty("rate")
+rate = engine.getProperty("rate")
+friend.setProperty("rate", 130)
+engine.setProperty("rate", 130)
+voice = friend.getProperty("voices")
+voice = engine.getProperty("voices")
+friend.setProperty("voice", voice[1].id)
+engine.setProperty("voice", voice[1].id)
+volume = friend.getProperty("volume")
+volume = engine.getProperty("volume")
+friend.setProperty("volume", 1.0)
+engine.setProperty("volume", 1.0)
+engine.say("tell  me what is your name and i will tell you what you are ")
+engine.runAndWait()
+name = input("YOUR NAME: ")
+if name.lower() == 'aljun':
+	friend.say(" you are so smart and handsome," + name)
+	print("you are so smart and handsome " + name)
+elif name.lower() == 'allen':
+	friend.say("you are so fucking ligitness," + name)
+	print("you are so fucking ligitness " + name)
+else:
+	friend.say(" you are so ugly and dumb," + name)
+	print("you are so ugly and dumb " + name)
+friend.runAndWait()
